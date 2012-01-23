@@ -21,4 +21,12 @@ public class MyFrame extends JFrame {
 	}
 	return label;
     }
+
+    public static void main(String [] args) {
+	MyFrame frame = new MyFrame();
+	frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	frame.setSize(400, 300);
+	frame.show();
+    }
+    
 }
