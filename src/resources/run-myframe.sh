@@ -1,0 +1,1 @@
+java -classpath ~/projects/fest-samples/target/classes MyFrame
