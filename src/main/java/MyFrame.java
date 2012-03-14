@@ -60,6 +60,7 @@ public class MyFrame extends JFrame {
     public static void main(String[] args) {
     	MyFrame myFrame = new MyFrame();
     	myFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	myFrame.setSize(400, 300);
     	myFrame.setVisible(true);
 	}
 }
