@@ -5,6 +5,8 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 
 public class MyFrame extends JFrame {
 
@@ -22,6 +24,8 @@ public class MyFrame extends JFrame {
 
 	private JDialog dialog;
 
+    private JMenuBar menuBar;   
+
     public MyFrame() {
     	add(getLabel());
     	setName("myFrame");
@@ -31,6 +35,7 @@ public class MyFrame extends JFrame {
     	dialog.setModal(true);
     	dialog.setVisible(true);
     	setVisible(true);
+	setJMenuBar(getMyMenuBar());
     }
 
     private JLabel getLabel() {
@@ -55,6 +60,17 @@ public class MyFrame extends JFrame {
 			});
 		}
 		return jButton;
+    }
+
+    private JMenuBar getMyMenuBar() {
+	if (menuBar == null) {
+	    menuBar = new JMenuBar();
+	    JMenu menu = new JMenu();
+	    menu.setName("frameMenu");
+	    menu.setText("Menu");
+	    menuBar.add(menu);
+	}
+	return menuBar;
     }
     
     public static void main(String[] args) {
