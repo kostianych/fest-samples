@@ -16,6 +16,7 @@ import org.fest.swing.finder.WindowFinder;
 import org.fest.swing.fixture.DialogFixture;
 import org.fest.swing.fixture.FrameFixture;
 import org.fest.swing.fixture.JLabelFixture;
+import org.fest.swing.fixture.JMenuItemFixture;
 import java.util.concurrent.TimeUnit;
 
 public class TestMyDialog {    
@@ -62,8 +63,10 @@ public class TestMyDialog {
     	myFrame = WindowFinder.findFrame("myFrame").using(robot);
     	JLabelFixture label = myFrame.label(MyFrame.LABEL_NAME);
     	String labelText = label.text();
-    	assertEquals(labelText, MyFrame.LABEL_TEXT);    
-
+    	assertEquals(labelText, MyFrame.LABEL_TEXT);
+	JMenuItemFixture menu = myFrame.menuItem("frameMenu");
+	assertNotNull(menu);
+	menu.click();
     }
 
 }
